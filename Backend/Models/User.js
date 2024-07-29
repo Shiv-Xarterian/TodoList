@@ -16,6 +16,10 @@ const UserSchema = new mongoose.Schema({
   Avatar: {
     type: String,
   },
+  Role: {
+    type: String,
+    default: "",
+  },
   Notes: [
     {
       type: mongoose.Schema.Types.ObjectId,

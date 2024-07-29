@@ -5,9 +5,17 @@ const GetAllNotes = async (req, res) => {
   try {
     const UserId = req.id;
 
+    let Notes = [];
+
     const user = await User.findById(UserId).populate({
       path: "Notes",
     });
+
+    Notes = user.Notes;
+
+    if (user.Role == "Admin") {
+      Notes = await Note.find({});
+    }
 
     if (!user) {
       return res.status(404).json({
@@ -19,7 +27,7 @@ const GetAllNotes = async (req, res) => {
     return res.status(200).json({
       Success: true,
       Message: "All Notes Loaded",
-      Notes: user.Notes,
+      Notes: Notes,
     });
   } catch (error) {
     return res.status(500).json({

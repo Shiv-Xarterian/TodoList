@@ -7,6 +7,7 @@ const {
   DeleteANote,
   UpdateANote,
 } = require("../Controllers/Note");
+const { CheckValidAdmin } = require("../Middleware/CheckAdmin");
 
 const Router = express.Router();
 
@@ -16,4 +17,11 @@ Router.get("/allnotes", CheckAuthentication, GetAllNotes);
 Router.post("/addnote", CheckAuthentication, AddANote);
 Router.delete("/deletenote/:id", CheckAuthentication, DeleteANote);
 Router.put("/updatenote/:id", CheckAuthentication, UpdateANote);
+Router.get(
+  "/allnotes/admin",
+  CheckAuthentication,
+  CheckValidAdmin,
+  GetAllNotes
+);
+
 module.exports = Router;
