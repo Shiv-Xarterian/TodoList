@@ -1,5 +1,5 @@
 const express = require("express");
-const { Register, Login } = require("../Controllers/User");
+const { Register, Login, updateAvatar } = require("../Controllers/User");
 const { CheckAuthentication } = require("../Middleware/CheckAuth");
 const {
   GetAllNotes,
@@ -8,6 +8,8 @@ const {
   UpdateANote,
 } = require("../Controllers/Note");
 const { CheckValidAdmin } = require("../Middleware/CheckAdmin");
+const { upload } = require("../Middleware/Multer");
+const { UploadFile } = require("../utils/CloudUpload");
 
 const Router = express.Router();
 
@@ -22,6 +24,13 @@ Router.get(
   CheckAuthentication,
   CheckValidAdmin,
   GetAllNotes
+);
+Router.put(
+  "/updateAvatar",
+  CheckAuthentication,
+  upload.single("file"),
+  UploadFile,
+  updateAvatar
 );
 
 module.exports = Router;

@@ -1,5 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const cors = require("cors");
 
 const server = express();
 dotenv.config({
@@ -7,7 +8,10 @@ dotenv.config({
 });
 
 server.use(express.json());
+server.use(cors());
+
 require("./database");
+require("./Cloudinary");
 
 server.use("/api/v1", require("./Routes/User"));
 

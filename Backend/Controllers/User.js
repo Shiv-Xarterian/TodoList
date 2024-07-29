@@ -1,6 +1,7 @@
 const { User } = require("../Models/User");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const { NotFoundError } = require("../Middleware/ErrorHandling");
 
 const Register = async (req, res) => {
   try {
@@ -95,4 +96,30 @@ const Login = async (req, res) => {
   }
 };
 
-module.exports = { Register, Login };
+const updateAvatar = async (req, res) => {
+  try {
+    const FileData = req.FileData;
+    const UserId = req.id;
+
+    const user = await User.findById(UserId);
+
+    if (!user) {
+      throw new NotFoundError("No User Found");
+    }
+
+    user.Avatar = FileData.secure_url;
+    await user.save();
+
+    return res.status(200).json({
+      Success: true,
+      Message: "User Avatar Updated Successfully",
+    });
+  } catch (error) {
+    return res.status(error.status || 500).json({
+      Success: false,
+      Message: error.message,
+    });
+  }
+};
+
+module.exports = { Register, Login, updateAvatar };

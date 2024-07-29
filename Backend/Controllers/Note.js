@@ -1,3 +1,4 @@
+const { NotFoundError } = require("../Middleware/ErrorHandling");
 const { Note } = require("../Models/Note");
 const { User } = require("../Models/User");
 
@@ -95,10 +96,7 @@ const DeleteANote = async (req, res) => {
     const note = await Note.findByIdAndDelete(NoteId);
 
     if (!note) {
-      return res.status(404).json({
-        Success: false,
-        Error: "No Note Found",
-      });
+      throw new NotFoundError("No Note Found");
     }
 
     const idx = user.Notes.indexOf(NoteId);
@@ -111,7 +109,7 @@ const DeleteANote = async (req, res) => {
       Message: "Note Deleted Successfully",
     });
   } catch (error) {
-    return res.status(500).json({
+    return res.status(error.status || 500).json({
       Success: false,
       Error: error.message,
     });
