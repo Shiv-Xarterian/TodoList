@@ -3,11 +3,11 @@ const mongoose = require("mongoose");
 const NoteSchema = new mongoose.Schema({
   Title: {
     type: String,
-    require,
+    required: true,
   },
   Message: {
     type: String,
-    require,
+    required: true,
   },
   Owner: {
     type: mongoose.Schema.Types.ObjectId,
