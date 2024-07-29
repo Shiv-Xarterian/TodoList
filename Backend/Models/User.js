@@ -16,6 +16,13 @@ const UserSchema = new mongoose.Schema({
   Avatar: {
     type: String,
   },
+  Notes: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Notes",
+    },
+  ],
 });
 
-export const User = mongoose.model("User", UserSchema);
+const User = mongoose.model("User", UserSchema);
+module.exports = { User };
