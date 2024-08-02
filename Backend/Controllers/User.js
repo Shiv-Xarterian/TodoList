@@ -1,50 +1,21 @@
 const { User } = require("../Models/User");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
-const { NotFoundError } = require("../Middleware/ErrorHandling");
+const { NotFoundError } = require("../utils/ErrorHandling");
+const { RegisterUser, LoginUser, UpdateAvatar } = require("../Services/User");
 
 const Register = async (req, res) => {
   try {
     const { UserName, UserEmail, UserPassword, UserRole } = req.body;
-
-    if (!UserEmail || !UserPassword || !UserName) {
-      return res.status(409).json({
-        Success: false,
-        Error: "Please Check! Credentials are Missing",
-      });
-    }
-
-    let user = await User.findOne({ Email: UserEmail });
-
-    if (user) {
-      return res.status(409).json({
-        Success: "false",
-        Error: "User Already Exists",
-      });
-    }
-
-    const HashPassword = bcrypt.hashSync(
+    if (!UserEmail || !UserPassword || !UserName)
+      throw new NotFoundError("Please See Credentials are Missing");
+    const response = await RegisterUser(
+      UserName,
+      UserEmail,
       UserPassword,
-      bcrypt.genSaltSync(parseInt(process.env.Rounds))
+      UserRole
     );
-
-    user = await User.create({
-      Name: UserName,
-      Email: UserEmail,
-      Password: HashPassword,
-      Role: UserRole,
-    });
-
-    const Token = jwt.sign({ _id: user.id }, process.env.Secret);
-
-    return res.status(201).json({
-      Success: true,
-      Message: "User Registered Successfully",
-      User: user,
-      Token: Token,
-    });
+    return res.status(200).json(response);
   } catch (error) {
-    return res.status(500).json({
+    return res.status(error.status || 500).json({
       Success: false,
       Error: error.message,
     });
@@ -55,41 +26,13 @@ const Login = async (req, res) => {
   try {
     const { UserEmail, UserPassword } = req.body;
 
-    if (!UserEmail || !UserPassword) {
-      return res.status(400).json({
-        Success: false,
-        Error: `Please Recheck! Credentials are missing`,
-      });
-    }
+    if (!UserEmail || !UserPassword)
+      throw new NotFoundError(`Please Verify Credentials`);
 
-    const user = await User.findOne({ Email: UserEmail });
-
-    if (!user) {
-      return res.status(404).json({
-        Success: false,
-        Error: "No User Found! Please Register",
-      });
-    }
-
-    const isPasswordCorrect = await bcrypt.compare(UserPassword, user.Password);
-
-    if (!isPasswordCorrect) {
-      return res.status(401).json({
-        Success: false,
-        Error: "Wrong Password",
-      });
-    }
-
-    const JwtToken = jwt.sign({ _id: user._id }, process.env.Secret);
-
-    return res.status(201).json({
-      Success: true,
-      Message: "User Logged In Successful",
-      User: user,
-      Token: JwtToken,
-    });
+    const LoginResponse = await LoginUser(UserEmail, UserPassword);
+    return res.status(200).json(LoginResponse);
   } catch (error) {
-    return res.status(500).json({
+    return res.status(error.status || 500).json({
       Success: false,
       Error: error.message,
     });
@@ -101,19 +44,10 @@ const updateAvatar = async (req, res) => {
     const FileData = req.FileData;
     const UserId = req.id;
 
-    const user = await User.findById(UserId);
-
-    if (!user) {
-      throw new NotFoundError("No User Found");
-    }
-
-    user.Avatar = FileData.secure_url;
-    await user.save();
-
-    return res.status(200).json({
-      Success: true,
-      Message: "User Avatar Updated Successfully",
-    });
+    if (!FileData || !UserId)
+      throw new NotFoundError(`Credentials are Missing`);
+    const UpdateAvatarResponse = await UpdateAvatar(FileData, UserId);
+    return res.status(200).json(UpdateAvatarResponse);
   } catch (error) {
     return res.status(error.status || 500).json({
       Success: false,

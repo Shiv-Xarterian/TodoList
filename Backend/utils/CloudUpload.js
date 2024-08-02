@@ -1,6 +1,6 @@
 const { cloudinary } = require("../Cloudinary");
-const { NotFoundError } = require("../Middleware/ErrorHandling");
 const fs = require("fs");
+const { NotFoundError } = require("./ErrorHandling");
 
 const UploadFile = async (req, res, next) => {
   try {

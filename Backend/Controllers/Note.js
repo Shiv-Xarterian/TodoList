@@ -1,35 +1,19 @@
-const { NotFoundError } = require("../Middleware/ErrorHandling");
 const { Note } = require("../Models/Note");
 const { User } = require("../Models/User");
+const {
+  GetAllNotesService,
+  AddNoteService,
+  DeleteNoteService,
+  UpdateANoteService,
+} = require("../Services/Note");
+const { NotFoundError } = require("../utils/ErrorHandling");
 
 const GetAllNotes = async (req, res) => {
   try {
     const UserId = req.id;
-
-    let Notes = [];
-
-    const user = await User.findById(UserId).populate({
-      path: "Notes",
-    });
-
-    Notes = user.Notes;
-
-    if (user.Role == "Admin") {
-      Notes = await Note.find({});
-    }
-
-    if (!user) {
-      return res.status(404).json({
-        Success: false,
-        Error: "No User Found! Please Login",
-      });
-    }
-
-    return res.status(200).json({
-      Success: true,
-      Message: "All Notes Loaded",
-      Notes: Notes,
-    });
+    if (!UserId) throw new NotFoundError(`No User Found`);
+    const GetAllNotesResponse = await GetAllNotesService(UserId);
+    return res.status(200).json(GetAllNotesResponse);
   } catch (error) {
     return res.status(500).json({
       Success: false,
@@ -43,35 +27,15 @@ const AddANote = async (req, res) => {
     const UserId = req.id;
     const { NoteTitle, NoteMessage } = req.body;
 
-    if (!NoteTitle || !NoteMessage) {
-      return res.status(404).json({
-        Success: false,
-        Error: "Note Details Missing",
-      });
-    }
+    if (!NoteTitle || !NoteMessage)
+      throw new NotFoundError(`Notes Detail Missing`);
 
-    const user = await User.findById(UserId);
-    if (!user) {
-      return res.status(404).json({
-        Success: false,
-        Error: "No User Found! Please Login",
-      });
-    }
-
-    const newNote = await Note.create({
-      Title: NoteTitle,
-      Message: NoteMessage,
-      Owner: UserId,
-    });
-
-    user.Notes.push(newNote);
-    await user.save();
-
-    return res.status(200).json({
-      Success: true,
-      Message: "Note added Successfully",
-      Note: newNote,
-    });
+    const AddNoteResponse = await AddNoteService(
+      UserId,
+      NoteTitle,
+      NoteMessage
+    );
+    return res.status(200).json(AddNoteResponse);
   } catch (error) {
     return res.status(500).json({
       Success: false,
@@ -84,30 +48,9 @@ const DeleteANote = async (req, res) => {
   try {
     const UserId = req.id;
     const NoteId = req.params.id;
-
-    const user = await User.findById(UserId);
-    if (!user) {
-      return res.status(404).json({
-        Success: false,
-        Error: "No User Found! Please Login",
-      });
-    }
-
-    const note = await Note.findByIdAndDelete(NoteId);
-
-    if (!note) {
-      throw new NotFoundError("No Note Found");
-    }
-
-    const idx = user.Notes.indexOf(NoteId);
-    user.Notes.splice(idx, 1);
-
-    await user.save();
-
-    return res.status(200).json({
-      Success: true,
-      Message: "Note Deleted Successfully",
-    });
+    if (!NoteId) throw new NotFoundError(`Not A Valid NoteId`);
+    const DeleteANoteResponse = await DeleteNoteService(UserId, NoteId);
+    return res.status(200).json(DeleteANoteResponse);
   } catch (error) {
     return res.status(error.status || 500).json({
       Success: false,
@@ -121,25 +64,16 @@ const UpdateANote = async (req, res) => {
     const NoteId = req.params.id;
     const { NoteTitle, NoteMessage } = req.body;
 
-    const note = await Note.findById(NoteId);
+    if (!NoteId) throw NotFoundError(`Invalid Note`);
 
-    if (!note) {
-      return res.status(404).json({
-        Success: false,
-        Error: "No Note Found",
-      });
-    }
+    const UpdateNoteResponse = await UpdateANoteService(
+      req.id,
+      NoteId,
+      NoteTitle,
+      NoteMessage
+    );
 
-    note.Title = NoteTitle ? NoteTitle : note.Title;
-    note.Message = NoteMessage ? NoteMessage : note.Message;
-
-    await note.save();
-
-    return res.status(200).json({
-      Success: true,
-      Message: "Note Updated Successfully",
-      UpdatedNote: note,
-    });
+    return res.status(200).json(UpdateNoteResponse);
   } catch (error) {
     return res.status(500).json({
       Success: false,

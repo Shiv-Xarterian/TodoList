@@ -18,4 +18,11 @@ class BadRequest extends Error {
     this.status = 400;
   }
 }
-module.exports = { NotFoundError, UnAuthorised, BadRequest };
+
+class Conflict extends Error {
+  constructor(message) {
+    super(message);
+    this.status = 409;
+  }
+}
+module.exports = { NotFoundError, UnAuthorised, BadRequest, Conflict };

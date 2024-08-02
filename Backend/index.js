@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 
 const server = express();
+
 dotenv.config({
   path: ".env",
 });
