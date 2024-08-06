@@ -53,4 +53,18 @@ const UpdateAvatar = async (FileData, UserId) => {
   }
 };
 
-module.exports = { RegisterUser, LoginUser, UpdateAvatar };
+const LoadUserService = async (UserId) => {
+  try {
+    const user = await FindUser({ UserId });
+    if (!user) throw new NotFoundError(`No User Found! Please Register`);
+    return {
+      Status: true,
+      Message: "Welcome Back",
+      User: user,
+    };
+  } catch (error) {
+    throw error;
+  }
+};
+
+module.exports = { RegisterUser, LoginUser, UpdateAvatar, LoadUserService };

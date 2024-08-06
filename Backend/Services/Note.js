@@ -8,7 +8,7 @@ const { NotFoundError } = require("../utils/ErrorHandling");
 
 const GetAllNotesService = async (UserId) => {
   try {
-    const Notes = [];
+    let Notes = [];
     const user = await FindUser({ UserId: UserId, Populate: "Notes" });
     if (!user) throw NotFoundError(`No User Found`);
 

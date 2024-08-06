@@ -1,6 +1,11 @@
 const { User } = require("../Models/User");
 const { NotFoundError } = require("../utils/ErrorHandling");
-const { RegisterUser, LoginUser, UpdateAvatar } = require("../Services/User");
+const {
+  RegisterUser,
+  LoginUser,
+  UpdateAvatar,
+  LoadUserService,
+} = require("../Services/User");
 
 const Register = async (req, res) => {
   try {
@@ -56,4 +61,9 @@ const updateAvatar = async (req, res) => {
   }
 };
 
-module.exports = { Register, Login, updateAvatar };
+const LoadUser = async (req, res) => {
+  const LoadUserResponse = await LoadUserService(req.id);
+  return res.status(200).json(LoadUserResponse);
+};
+
+module.exports = { Register, Login, updateAvatar, LoadUser };

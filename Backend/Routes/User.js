@@ -1,5 +1,10 @@
 const express = require("express");
-const { Register, Login, updateAvatar } = require("../Controllers/User");
+const {
+  Register,
+  Login,
+  updateAvatar,
+  LoadUser,
+} = require("../Controllers/User");
 const { CheckAuthentication } = require("../Middleware/CheckAuth");
 const {
   GetAllNotes,
@@ -15,6 +20,7 @@ const Router = express.Router();
 
 Router.post("/register", Register);
 Router.put("/login", Login);
+Router.get("/loaduser", CheckAuthentication, LoadUser);
 Router.get("/allnotes", CheckAuthentication, GetAllNotes);
 Router.post("/addnote", CheckAuthentication, AddANote);
 Router.delete("/deletenote/:id", CheckAuthentication, DeleteANote);
