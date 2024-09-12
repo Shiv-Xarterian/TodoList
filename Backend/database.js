@@ -1,11 +1,12 @@
-const mongoose = require("mongoose");
-const connectdatabase = mongoose
-  .connect(process.env.Mongo)
-  .then((res) => {
-    console.log(`DataBase Connected`);
-  })
-  .catch((err) => {
-    console.log(`Error in Connection with DataBase -> ${err.message}`);
-  });
+import mongoose from "mongoose";
 
-module.exports = { connectdatabase };
+export const connectdatabase = async () => {
+  mongoose
+    .connect(process.env.Mongo)
+    .then((res) => {
+      console.log(`DataBase Connected`);
+    })
+    .catch((err) => {
+      console.log(`Error in Connection with DataBase -> ${err.message}`);
+    });
+};

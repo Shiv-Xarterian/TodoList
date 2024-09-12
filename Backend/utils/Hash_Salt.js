@@ -1,7 +1,7 @@
-const bcrypt = require("bcrypt");
-const { Conflict } = require("./ErrorHandling");
+import bcrypt from "bcrypt";
+import { Conflict } from "./ErrorHandling.js";
 
-const GenerateHash = async (UserPassword) => {
+export const GenerateHash = async (UserPassword) => {
   try {
     const HashPassword = await bcrypt.hashSync(
       UserPassword,
@@ -12,7 +12,7 @@ const GenerateHash = async (UserPassword) => {
     throw error;
   }
 };
-const VerifyPassword = async (UserPassword, HashPassword) => {
+export const VerifyPassword = async (UserPassword, HashPassword) => {
   try {
     const Verify = await bcrypt.compareSync(UserPassword, HashPassword);
     if (!Verify) throw new Conflict(`Wrong Password`);
@@ -21,4 +21,3 @@ const VerifyPassword = async (UserPassword, HashPassword) => {
     throw error;
   }
 };
-module.exports = { GenerateHash, VerifyPassword };

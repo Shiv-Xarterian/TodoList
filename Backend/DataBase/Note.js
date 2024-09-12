@@ -1,7 +1,7 @@
-const { Note } = require("../Models/Note");
-const { NotFoundError } = require("../utils/ErrorHandling");
+import { Note } from "../Models/Note.js";
+import { NotFoundError } from "../utils/ErrorHandling.js";
 
-const GetAllNotesAsAdmin = async () => {
+export const GetAllNotesAsAdmin = async () => {
   try {
     const Notes = await Note.find({});
     return Notes;
@@ -10,7 +10,7 @@ const GetAllNotesAsAdmin = async () => {
   }
 };
 
-const CreateANote = async (Title, Message, User) => {
+export const CreateANote = async (Title, Message, User) => {
   try {
     const newNote = await Note.create({
       Title,
@@ -25,7 +25,7 @@ const CreateANote = async (Title, Message, User) => {
   }
 };
 
-const DeleteANote = async (NoteId, User) => {
+export const DeleteANote = async (NoteId, User) => {
   try {
     const DeletedNote = await Note.findByIdAndDelete(NoteId);
     const Idx = User.Notes.indexof(NoteId);
@@ -38,7 +38,7 @@ const DeleteANote = async (NoteId, User) => {
   }
 };
 
-const UpdateANote = async (NoteId, NoteTitle, NoteMessage) => {
+export const UpdateANote = async (NoteId, NoteTitle, NoteMessage) => {
   try {
     const note = await Note.findById(NoteId);
     if (!note) throw NotFoundError(`No Note Found`);
@@ -53,5 +53,3 @@ const UpdateANote = async (NoteId, NoteTitle, NoteMessage) => {
     throw error;
   }
 };
-
-module.exports = { GetAllNotesAsAdmin, CreateANote, DeleteANote, UpdateANote };

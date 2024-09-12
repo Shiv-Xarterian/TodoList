@@ -1,20 +1,13 @@
-const express = require("express");
-const {
-  Register,
-  Login,
-  updateAvatar,
-  LoadUser,
-} = require("../Controllers/User");
-const { CheckAuthentication } = require("../Middleware/CheckAuth");
-const {
-  GetAllNotes,
+import express from "express";
+import { LoadUser, Login, Register } from "../Controllers/User.js";
+import {
   AddANote,
   DeleteANote,
+  GetAllNotes,
   UpdateANote,
-} = require("../Controllers/Note");
-const { CheckValidAdmin } = require("../Middleware/CheckAdmin");
-const { upload } = require("../Middleware/Multer");
-const { UploadFile } = require("../utils/CloudUpload");
+} from "../Controllers/Note.js";
+import { CheckAuthentication } from "../Middleware/CheckAuth.js";
+import { CheckValidAdmin } from "../Middleware/CheckAdmin.js";
 
 const Router = express.Router();
 
@@ -31,12 +24,12 @@ Router.get(
   CheckValidAdmin,
   GetAllNotes
 );
-Router.put(
-  "/updateAvatar",
-  CheckAuthentication,
-  upload.single("file"),
-  UploadFile,
-  updateAvatar
-);
+// Router.put(
+//   "/updateAvatar",
+//   CheckAuthentication,
+//   upload.single("file"),
+//   UploadFile,
+//   updateAvatar
+// );
 
-module.exports = Router;
+export { Router };

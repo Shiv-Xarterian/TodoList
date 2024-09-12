@@ -1,14 +1,12 @@
-const { Note } = require("../Models/Note");
-const { User } = require("../Models/User");
-const {
-  GetAllNotesService,
+import { NotFoundError } from "../utils/ErrorHandling.js";
+import {
   AddNoteService,
   DeleteNoteService,
+  GetAllNotesService,
   UpdateANoteService,
-} = require("../Services/Note");
-const { NotFoundError } = require("../utils/ErrorHandling");
+} from "../Services/Note.js";
 
-const GetAllNotes = async (req, res) => {
+export const GetAllNotes = async (req, res) => {
   try {
     const UserId = req.id;
     if (!UserId) throw new NotFoundError(`No User Found`);
@@ -22,7 +20,7 @@ const GetAllNotes = async (req, res) => {
   }
 };
 
-const AddANote = async (req, res) => {
+export const AddANote = async (req, res) => {
   try {
     const UserId = req.id;
     const { NoteTitle, NoteMessage } = req.body;
@@ -44,7 +42,7 @@ const AddANote = async (req, res) => {
   }
 };
 
-const DeleteANote = async (req, res) => {
+export const DeleteANote = async (req, res) => {
   try {
     const UserId = req.id;
     const NoteId = req.params.id;
@@ -59,7 +57,7 @@ const DeleteANote = async (req, res) => {
   }
 };
 
-const UpdateANote = async (req, res) => {
+export const UpdateANote = async (req, res) => {
   try {
     const NoteId = req.params.id;
     const { NoteTitle, NoteMessage } = req.body;
@@ -81,5 +79,3 @@ const UpdateANote = async (req, res) => {
     });
   }
 };
-
-module.exports = { GetAllNotes, AddANote, DeleteANote, UpdateANote };

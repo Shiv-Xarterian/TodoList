@@ -1,6 +1,6 @@
-const { User } = require("../Models/User");
+import { User } from "../Models/User.js";
 
-const FindUser = async ({ UserId, Email, Populate }) => {
+export const FindUser = async ({ UserId, Email, Populate }) => {
   try {
     const user = UserId
       ? await User.findById(UserId).populate(`${Populate || ""}`)
@@ -11,7 +11,7 @@ const FindUser = async ({ UserId, Email, Populate }) => {
   }
 };
 
-const CreateUser = async (Name, Email, Password, Role) => {
+export const CreateUser = async (Name, Email, Password, Role) => {
   try {
     const user = await User.create({
       Name,
@@ -24,5 +24,3 @@ const CreateUser = async (Name, Email, Password, Role) => {
     throw error;
   }
 };
-
-module.exports = { FindUser, CreateUser };

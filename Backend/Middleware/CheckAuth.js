@@ -1,6 +1,6 @@
-const jwt = require("jsonwebtoken");
+import jwt from "jsonwebtoken";
 
-const CheckAuthentication = async (req, res, next) => {
+export const CheckAuthentication = async (req, res, next) => {
   try {
     const Token = req.headers["token"];
 
@@ -29,5 +29,3 @@ const CheckAuthentication = async (req, res, next) => {
     });
   }
 };
-
-module.exports = { CheckAuthentication };

@@ -1,6 +1,6 @@
-const { User } = require("../Models/User");
+import { User } from "../Models/User.js";
 
-const CheckValidAdmin = async (req, res, next) => {
+export const CheckValidAdmin = async (req, res, next) => {
   try {
     const UserId = req.id;
     const user = await User.findById(UserId);
@@ -13,5 +13,3 @@ const CheckValidAdmin = async (req, res, next) => {
     });
   }
 };
-
-module.exports = { CheckValidAdmin };

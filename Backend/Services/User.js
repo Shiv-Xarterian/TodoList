@@ -1,9 +1,14 @@
-const { FindUser, CreateUser } = require("../DataBase/User");
-const { Conflict, NotFoundError } = require("../utils/ErrorHandling");
-const { GenerateHash, VerifyPassword } = require("../utils/Hash_Salt");
-const { GenerateToken } = require("../utils/JsonWebToken");
+import { CreateUser, FindUser } from "../DataBase/User.js";
+import { Conflict, NotFoundError } from "../utils/ErrorHandling.js";
+import { VerifyPassword } from "../utils/Hash_Salt.js";
+import { GenerateToken } from "../utils/JsonWebToken.js";
 
-const RegisterUser = async (UserName, UserEmail, UserPassword, UserRole) => {
+export const RegisterUser = async (
+  UserName,
+  UserEmail,
+  UserPassword,
+  UserRole
+) => {
   try {
     let user = await FindUser({ Email: UserEmail });
     if (user) throw new Conflict(`User Already Exists`);
@@ -21,7 +26,7 @@ const RegisterUser = async (UserName, UserEmail, UserPassword, UserRole) => {
   }
 };
 
-const LoginUser = async (UserEmail, UserPassword) => {
+export const LoginUser = async (UserEmail, UserPassword) => {
   try {
     let user = await FindUser({ Email: UserEmail });
     if (!user) throw new NotFoundError(`No User Found! Please Register`);
@@ -38,7 +43,7 @@ const LoginUser = async (UserEmail, UserPassword) => {
   }
 };
 
-const UpdateAvatar = async (FileData, UserId) => {
+export const UpdateAvatar = async (FileData, UserId) => {
   try {
     const user = await FindUser({ UserId: UserId });
     if (!user) throw new NotFoundError(`No User Found! Please Register`);
@@ -53,7 +58,7 @@ const UpdateAvatar = async (FileData, UserId) => {
   }
 };
 
-const LoadUserService = async (UserId) => {
+export const LoadUserService = async (UserId) => {
   try {
     const user = await FindUser({ UserId });
     if (!user) throw new NotFoundError(`No User Found! Please Register`);
@@ -66,5 +71,3 @@ const LoadUserService = async (UserId) => {
     throw error;
   }
 };
-
-module.exports = { RegisterUser, LoginUser, UpdateAvatar, LoadUserService };

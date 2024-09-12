@@ -1,0 +1,161 @@
+2024-09-10 13:42:14 [[38;2;255;0;0mERROR[39m]: Wrong Password
+Error: Wrong Password
+    at VerifyPassword (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/utils/Hash_Salt.js:18:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async LoginUser (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Services/User.js:33:5)
+    at async Login (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Controllers/User.js:37:27) 
+2024-09-10 14:46:54 [[38;2;0;0;255mINFO[39m]: Login Done 
+2024-09-10 14:46:58 [[38;2;0;0;255mINFO[39m]: Login Done 
+2024-09-10 14:49:27 [[38;2;0;0;255mINFO[39m]: Login Done 
+2024-09-10 14:50:31 [[38;2;255;0;0mERROR[39m]: Wrong Password
+Error: Wrong Password
+    at VerifyPassword (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/utils/Hash_Salt.js:18:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async LoginUser (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Services/User.js:33:5)
+    at async Login (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Controllers/User.js:37:27) 
+2024-09-10 14:54:51 [[38;2;255;0;0mERROR[39m]: Wrong Password
+Error: Wrong Password
+    at VerifyPassword (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/utils/Hash_Salt.js:18:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async LoginUser (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Services/User.js:33:5)
+    at async Login (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Controllers/User.js:37:27) 
+2024-09-10 15:03:08 [[38;2;255;0;0mERROR[39m]: Wrong Password
+Error: Wrong Password
+    at VerifyPassword (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/utils/Hash_Salt.js:18:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async LoginUser (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Services/User.js:33:5)
+    at async Login (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Controllers/User.js:37:27) 
+2024-09-10 15:24:36 [[38;2;0;0;255mINFO[39m]: Login Done 
+2024-09-10 15:28:01 [[38;2;0;0;255mINFO[39m]: Login Done 
+2024-09-10 15:33:40 [[38;2;0;0;255mINFO[39m]: Login Done 
+2024-09-10 15:35:16 [[38;2;0;0;255mINFO[39m]: Login Done 
+2024-09-10 15:41:10 [[38;2;0;0;255mINFO[39m]: Login Done 
+2024-09-10 15:41:50 [[38;2;0;0;255mINFO[39m]: Login Done 
+2024-09-10 15:49:40 [[38;2;255;0;0mERROR[39m]: Wrong Password
+Error: Wrong Password
+    at VerifyPassword (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/utils/Hash_Salt.js:18:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async LoginUser (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Services/User.js:33:5)
+    at async Login (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Controllers/User.js:37:27) 
+2024-09-10 16:14:08 [[38;2;255;0;0mERROR[39m]: Wrong Password
+Error: Wrong Password
+    at VerifyPassword (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/utils/Hash_Salt.js:18:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async LoginUser (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Services/User.js:33:5)
+    at async Login (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Controllers/User.js:37:27) 
+2024-09-10 16:26:06 [[38;2;255;0;0mERROR[39m]: Wrong Password
+Error: Wrong Password
+    at VerifyPassword (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/utils/Hash_Salt.js:18:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async LoginUser (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Services/User.js:33:5)
+    at async Login (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Controllers/User.js:37:27) 
+2024-09-10 17:19:47 [[38;2;0;0;255mINFO[39m]: Login Done 
+2024-09-10 17:20:32 [[38;2;255;0;0mERROR[39m]: Wrong Password
+Error: Wrong Password
+    at VerifyPassword (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/utils/Hash_Salt.js:18:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async LoginUser (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Services/User.js:33:5)
+    at async Login (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Controllers/User.js:37:27) 
+2024-09-10 17:30:15 [[38;2;255;0;0mERROR[39m]: Wrong Password
+Error: Wrong Password
+    at VerifyPassword (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/utils/Hash_Salt.js:18:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async LoginUser (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Services/User.js:33:5)
+    at async Login (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Controllers/User.js:37:27) 
+2024-09-10 17:36:31 [[38;2;255;0;0mERROR[39m]: Wrong Password
+Error: Wrong Password
+    at VerifyPassword (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/utils/Hash_Salt.js:18:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async LoginUser (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Services/User.js:33:5)
+    at async Login (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Controllers/User.js:37:27) 
+2024-09-10 17:55:07 [[38;2;255;0;0mERROR[39m]: Wrong Password
+Error: Wrong Password
+    at VerifyPassword (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/utils/Hash_Salt.js:18:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async LoginUser (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Services/User.js:33:5)
+    at async Login (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Controllers/User.js:37:27) 
+2024-09-10 17:57:58 [[38;2;255;0;0mERROR[39m]: Wrong Password
+Error: Wrong Password
+    at VerifyPassword (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/utils/Hash_Salt.js:18:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async LoginUser (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Services/User.js:33:5)
+    at async Login (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Controllers/User.js:37:27) 
+2024-09-10 18:13:56 [[38;2;255;0;0mERROR[39m]: Wrong Password
+Error: Wrong Password
+    at VerifyPassword (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/utils/Hash_Salt.js:18:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async LoginUser (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Services/User.js:33:5)
+    at async Login (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Controllers/User.js:37:27) 
+2024-09-10 18:20:18 [[38;2;255;0;0mERROR[39m]: Wrong Password
+Error: Wrong Password
+    at VerifyPassword (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/utils/Hash_Salt.js:18:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async LoginUser (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Services/User.js:33:5)
+    at async Login (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Controllers/User.js:37:27) 
+2024-09-10 18:42:06 [[38;2;255;0;0mERROR[39m]: Wrong Password
+Error: Wrong Password
+    at VerifyPassword (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/utils/Hash_Salt.js:18:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async LoginUser (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Services/User.js:33:5)
+    at async Login (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Controllers/User.js:37:27) 
+2024-09-12 09:43:38 [[38;2;255;0;0mERROR[39m]: Wrong Password
+Error: Wrong Password
+    at VerifyPassword (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/utils/Hash_Salt.js:18:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async LoginUser (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Services/User.js:33:5)
+    at async Login (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Controllers/User.js:37:27) 
+2024-09-12 09:43:44 [[38;2;0;0;255mINFO[39m]: Login Done 
+2024-09-12 10:07:07 [[38;2;0;0;255mINFO[39m]: Login Done 
+2024-09-12 10:13:07 [[38;2;255;0;0mERROR[39m]: newrelic.agent.recordCustomEvent is not a function
+TypeError: newrelic.agent.recordCustomEvent is not a function
+    at Login (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Controllers/User.js:39:20)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) 
+2024-09-12 10:13:59 [[38;2;0;0;255mINFO[39m]: Login Done 
+2024-09-12 10:23:37 [[38;2;255;0;0mERROR[39m]: Cannot read properties of undefined (reading 'info')
+TypeError: Cannot read properties of undefined (reading 'info')
+    at Login (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Controllers/User.js:44:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) 
+2024-09-12 10:24:36 [[38;2;255;0;0mERROR[39m]: Cannot read properties of undefined (reading 'info')
+TypeError: Cannot read properties of undefined (reading 'info')
+    at Login (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Controllers/User.js:44:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) 
+2024-09-12 10:24:55 [[38;2;255;0;0mERROR[39m]: Cannot read properties of undefined (reading 'info')
+TypeError: Cannot read properties of undefined (reading 'info')
+    at Login (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Controllers/User.js:44:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) 
+2024-09-12 10:25:09 [[38;2;255;0;0mERROR[39m]: Cannot read properties of undefined (reading 'info')
+TypeError: Cannot read properties of undefined (reading 'info')
+    at Login (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Controllers/User.js:40:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) 
+2024-09-12 10:25:10 [[38;2;255;0;0mERROR[39m]: Cannot read properties of undefined (reading 'info')
+TypeError: Cannot read properties of undefined (reading 'info')
+    at Login (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Controllers/User.js:40:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) 
+2024-09-12 10:26:14 [[38;2;255;0;0mERROR[39m]: Cannot read properties of undefined (reading 'info')
+TypeError: Cannot read properties of undefined (reading 'info')
+    at Login (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Controllers/User.js:40:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) 
+2024-09-12 10:26:15 [[38;2;255;0;0mERROR[39m]: Cannot read properties of undefined (reading 'info')
+TypeError: Cannot read properties of undefined (reading 'info')
+    at Login (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Controllers/User.js:40:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) 
+2024-09-12 10:26:16 [[38;2;255;0;0mERROR[39m]: Cannot read properties of undefined (reading 'info')
+TypeError: Cannot read properties of undefined (reading 'info')
+    at Login (file:///Users/shivkumar/Desktop/Javascript/Worksheet/TodoList/Backend/Controllers/User.js:40:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5) 
+2024-09-12 10:27:41 [[38;2;0;0;255mINFO[39m]: Login DOne 
+2024-09-12 10:27:57 [[38;2;0;0;255mINFO[39m]: Login DOne 
+2024-09-12 10:27:58 [[38;2;0;0;255mINFO[39m]: Login DOne 
+2024-09-12 10:27:59 [[38;2;0;0;255mINFO[39m]: Login DOne 
+2024-09-12 10:27:59 [[38;2;0;0;255mINFO[39m]: Login DOne 
+2024-09-12 10:28:00 [[38;2;0;0;255mINFO[39m]: Login DOne 
+2024-09-12 10:28:03 [[38;2;0;0;255mINFO[39m]: Login DOne 
+2024-09-12 10:30:26 [[38;2;0;0;255mINFO[39m]: Login DOne 
+2024-09-12 10:30:35 [[38;2;0;0;255mINFO[39m]: Login DOne 
+2024-09-12 10:33:38 [[38;2;0;0;255mINFO[39m]: Login DOne 
+2024-09-12 10:40:25 [[38;2;0;0;255mINFO[39m]: Login DOne 
+2024-09-12 10:41:09 [[38;2;0;0;255mINFO[39m]: Login DOne 
+2024-09-12 10:47:49 [[38;2;0;0;255mINFO[39m]: Login DOne 
+2024-09-12 11:04:08 [[38;2;0;0;255mINFO[39m]: Login DOne 
+2024-09-12 11:10:25 [[38;2;0;0;255mINFO[39m]: Login DOne 
+{"level":"info","message":"Login DOne"}
